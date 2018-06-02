@@ -36,21 +36,6 @@ public class PersonService implements SpecificationService<Person, Long> {
 }  
 ```
 
-**Specificationable**
-```java
-public class PersonSpecification implements Specificationable<Person> {
-    private String name;
-    @Override
-    public Specification<Person> specification() {
-        return where(eq("name", name));
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-}
-```
-
 **Controller**
 ```java
 @Controller
@@ -71,6 +56,21 @@ public class PersonController {
     @GetMapping
     public Page<Person> page(PersonSpecification specification, Pageable pageable) {
         return personService.findAll(specification, pageable);
+    }
+}
+```
+
+**Specificationable**
+```java
+public class PersonSpecification implements Specificationable<Person> {
+    private String name;
+    @Override
+    public Specification<Person> specification() {
+        return where(eq("name", name));
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }
 ```
