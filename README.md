@@ -2,7 +2,7 @@
 
 ### Example
 
-####Repository
+**Repository**
 
 ```java
 public interface PersonRepository extends JpaRepository<Person, Long>, JpaSpecificationExecutor<Person> {
