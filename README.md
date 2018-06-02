@@ -63,14 +63,24 @@ public class PersonController {
 **Specificationable**
 ```java
 public class PersonSpecification implements Specificationable<Person> {
-    private String name;
+private String name;
+    private String email;
+    // private Optional<String> email;
+
     @Override
     public Specification<Person> specification() {
-        return where(eq("name", name));
+        return where(eqName()
+                .and(likeEmail())
+        );
     }
 
-    public void setName(String name) {
-        this.name = name;
+    private Specification<Person> eqName() {
+        return eq("name", name);
+    }
+
+    // Optional 검색. email이 null인경우 검색 제외
+    private Specification<Person> likeEmail() {
+        return like("email", Optional.ofNullable(email));
     }
 }
 ```
