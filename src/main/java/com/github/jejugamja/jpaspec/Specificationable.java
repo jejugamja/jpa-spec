@@ -8,8 +8,7 @@ import java.util.Optional;
 
 import static com.github.jejugamja.jpaspec.Specificationable.PathUtil.get;
 
-public interface
-Specificationable<T> extends Specification<T> {
+public interface Specificationable<T> extends Specification<T> {
 
     Specification<T> specification();
 
