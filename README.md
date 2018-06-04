@@ -1,6 +1,6 @@
 # jpa-spec
 
-Specification patter을 조금 더 쉽게 사용할 수 있게 만들어 봤습니다.
+Specification pattern을 조금 더 쉽게 사용할 수 있게 만들어 봤습니다.
 서비스 레이어에 SpecificationService implemets 한후 
 Specificationable에 검색 로직을 구현합니다.
 
